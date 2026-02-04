@@ -7,15 +7,18 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-	<bean id="empId" class="com.tyss.Employee">
-		<property name="name" value="Penga"></property>	
-		<property name="email" value="Penga@gmail.com"></property>	
-		<property name="salary" value="50000"></property>	
+	<bean id="enginSetterId" class="com.tyss.object.Engine">
+		<property name="cc" value="750"></property>
 	</bean>
 	
-	<bean id="studentBean" class="com.tyss.Student">
-		<constructor-arg value="Dinga"></constructor-arg>
-		<constructor-arg value="567890234"></constructor-arg>
+	<bean id="carSetterBean" class="com.tyss.object.Car">
+		<property name="brand" value="TATA"></property>
+		<property name="engine" ref="enginSetterId"></property>
+	</bean>
+	
+	<bean id="carConstructorBean" class="com.tyss.object.Car">
+		<constructor-arg value="MAHINDRA"></constructor-arg>
+		<constructor-arg ref="enginSetterId"></constructor-arg>
 	</bean>
 
 </beans>
