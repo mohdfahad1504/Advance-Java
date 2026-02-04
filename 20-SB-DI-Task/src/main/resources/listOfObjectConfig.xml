@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+            
+    <!-- Beans For Setter Injection -->
+
+	<bean id="subjectMaths" class="com.tyss.listOfObject.Subject">
+		<property name="id" value="11"></property>
+		<property name="name" value="Maths"></property>
+	</bean>
+	
+	<bean id="subjectPhysics" class="com.tyss.listOfObject.Subject">
+		<property name="id" value="22"></property>
+		<property name="name" value="Physics"></property>
+	</bean>
+	
+	<bean id="subjectChemistry" class="com.tyss.listOfObject.Subject">
+		<property name="id" value="33"></property>
+		<property name="name" value="Chemistry"></property>
+	</bean>
+	
+	<bean id="subjectHindi" class="com.tyss.listOfObject.Subject">
+		<property name="id" value="44"></property>
+		<property name="name" value="Hindi"></property>
+	</bean>
+	
+	<bean id="subjectEnglish" class="com.tyss.listOfObject.Subject">
+		<property name="id" value="55"></property>
+		<property name="name" value="English"></property>
+	</bean>
+	
+	<bean id="studentSetterBean" class="com.tyss.listOfObject.Student">
+		<property name="name" value="Zinga"></property>
+		<property name="subjects">
+			<list>
+				<ref bean="subjectMaths" />
+				<ref bean="subjectPhysics" />
+				<ref bean="subjectChemistry" />
+				<ref bean="subjectHindi" />
+				<ref bean="subjectEnglish" />
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Beans For Constructor Injection -->
+	
+	<bean id="maths" class="com.tyss.listOfObject.Subject">
+		<constructor-arg value="111"></constructor-arg>
+		<constructor-arg value="Maths"></constructor-arg>
+	</bean>
+	
+	<bean id="urdu" class="com.tyss.listOfObject.Subject">
+		<constructor-arg value="122"></constructor-arg>
+		<constructor-arg value="Urdu"></constructor-arg>
+	</bean>
+	
+	<bean id="arbie" class="com.tyss.listOfObject.Subject">
+		<constructor-arg value="133"></constructor-arg>
+		<constructor-arg value="Arbie"></constructor-arg>
+	</bean>
+	
+	<bean id="science" class="com.tyss.listOfObject.Subject">
+		<constructor-arg value="144"></constructor-arg>
+		<constructor-arg value="Science"></constructor-arg>
+	</bean>
+	
+	<bean id="sScience" class="com.tyss.listOfObject.Subject">
+		<constructor-arg value="155"></constructor-arg>
+		<constructor-arg value="Social Science"></constructor-arg>
+	</bean>
+	
+	<bean id="studentConstructorBean" class="com.tyss.listOfObject.Student">
+		<constructor-arg value="Linga"></constructor-arg>
+		<constructor-arg>
+			<list>
+				<ref bean="maths"/>
+				<ref bean="urdu"/>
+				<ref bean="arbie"/>
+				<ref bean="science"/>
+				<ref bean="sScience"/>
+			</list>
+		</constructor-arg>
+	</bean>
+
+</beans>

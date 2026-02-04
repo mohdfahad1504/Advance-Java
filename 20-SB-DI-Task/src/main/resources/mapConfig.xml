@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+            
+	<!-- Beans For Setter Injection -->
+	<bean id="shopSetterBean" class="com.tyss.map.Shop">
+		<property name="name" value="General Shop"></property>
+		<property name="items">
+			<map>
+				<entry key="Rice" value="65"/>
+				<entry key="Floar" value="50"/>
+				<entry key="Daal" value="120"/>
+				<entry key="Palm Oil" value="165"/>
+			</map>
+		</property>
+	</bean>
+	
+	<!-- Beans For Constructor Injection -->
+	<bean id="shopConstructorBean" class="com.tyss.map.Shop">
+		<constructor-arg value="Frute Shop"/>
+		<constructor-arg>
+			<map>
+				<entry key="Apple" value="150"/>
+				<entry key="Oranage" value="40"/>
+				<entry key="Papaya" value="50"/>
+				<entry key="Banana" value="35"/>
+				<entry key="Grapes" value="80"/>
+			</map>
+		</constructor-arg>
+	</bean>
+
+</beans>

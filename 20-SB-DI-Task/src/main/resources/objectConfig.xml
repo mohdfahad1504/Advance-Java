@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+            http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+	<bean id="enginSetterId" class="com.tyss.object.Engine">
+		<property name="cc" value="750"></property>
+	</bean>
+	
+	<bean id="carSetterBean" class="com.tyss.object.Car">
+		<property name="brand" value="TATA"></property>
+		<property name="engine" ref="enginSetterId"></property>
+	</bean>
+	
+	<bean id="carConstructorBean" class="com.tyss.object.Car">
+		<constructor-arg value="MAHINDRA"></constructor-arg>
+		<constructor-arg ref="enginSetterId"></constructor-arg>
+	</bean>
+
+</beans>
